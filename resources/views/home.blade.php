@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                        @if(Auth::guard('admin')->check())
+                            Hola {{ Auth::guard('admin')->user()->name}}
+                        @elseif(Auth::guard('web')->check())
+                            Hola {{ Auth::guard('web')->user()->name}}
+                        @endif
                 </div>
             </div>
         </div>

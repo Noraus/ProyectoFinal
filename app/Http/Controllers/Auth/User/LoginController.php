@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -59,7 +59,7 @@ class LoginController extends Controller
         }
 
         // If Unsuccessful, then redirect back to the login with the form data
-        //return redirect()->back()->withInput($request->only('email', 'remember'));
-        return view('verification.sinVerificar');
+        return redirect()->back()->withInput($request->only('email', 'remember'));
+        //return view('verification.sinVerificar');
     }
 }
